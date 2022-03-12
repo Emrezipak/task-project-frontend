@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:2557"
+  "proxy": "https://task-project-backend.herokuapp.com/"
 }

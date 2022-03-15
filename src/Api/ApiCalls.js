@@ -1,23 +1,24 @@
 import axios from 'axios';
 import { authHeader } from './DataService';
+const url="https://task-project-backend.herokuapp.com/"
 export const signUp=(body) =>{
-    return axios.post('api/auth/register',body)
+    return axios.post(url+'api/auth/register',body)
 }
 export const login=(email,password)=>{
-    return axios.post('api/auth/login',{
+    return axios.post(url+'api/auth/login',{
         email,
         password
     }
     )
 }
 export const getAllUser=()=>{
-    return axios.get("api/users/getAll",{headers:authHeader()})
+    return axios.get(url+"api/users/getAll",{headers:authHeader()})
 }
 export const addTask=(task)=>{
-    return axios.post("api/tasks/addTask",task,{headers:authHeader()})
+    return axios.post(url+"api/tasks/addTask",task,{headers:authHeader()})
 }
 export const getUserByName=(name)=>{
-    return axios.get("api/users/getByName",{
+    return axios.get(url+"api/users/getByName",{
         params:{
             name
         },
@@ -25,14 +26,14 @@ export const getUserByName=(name)=>{
     },)
 }
 export const getAllTask=()=>{
-    return axios.get("api/tasks/getAllTask",{headers:authHeader()})
+    return axios.get(url+"api/tasks/getAllTask",{headers:authHeader()})
 }
 
 export const deleteTask=(id)=>{
-    return axios.delete("api/tasks/deleteTask/"+id,{headers:authHeader()})
+    return axios.delete(url+"api/tasks/deleteTask/"+id,{headers:authHeader()})
 }
 export const getTaskByUserEmail=(email)=>{
-    return axios.get("api/tasks/getTaskByUser",{
+    return axios.get(url+"api/tasks/getTaskByUser",{
         params:{
             email
         },
@@ -40,7 +41,7 @@ export const getTaskByUserEmail=(email)=>{
     })
 }
 export const getTaskByUs=(email)=>{
-    return axios.get("api/tasks/getTaskByUser",{
+    return axios.get(url+"api/tasks/getTaskByUser",{
         params:{
             email
         },
